@@ -6,7 +6,7 @@ CREATE DATABASE employee_tricki_tracki;
 USE employee_tricki_tracki;
 -- Created the table "departments"
 CREATE TABLE department (
-id INT (10) AUTO_INCREMENT ,
+id INT (10) ,
 name VARCHAR(30) NULL
 );
 -- Created the table "role"
