@@ -6,7 +6,7 @@ CREATE DATABASE employee_tricki_tracki;
 USE employee_tricki_tracki;
 -- Created the table "departments"
 CREATE TABLE department (
-id INT (10) ,
+id INT (10) AUTO_INCREMENT ,
 name VARCHAR(30) NULL
 );
 -- Created the table "role"
@@ -35,4 +35,4 @@ SELECT * FROM role;
 -- Inserted a set of records into the table
 INSERT INTO employee (id, first_name, last_name ,role_id,manager_id)
 VALUE (13, "haley", "brown" , 33, 5);
-SELECT * FROM employee
+SELECT * FROM employee; 
