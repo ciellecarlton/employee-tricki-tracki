@@ -2,6 +2,7 @@ const mysql = require('mysql');
 const inquirer = require('inquirer');
 const { printTable } = require('console-table-printer');
 const figlet = require('figlet');
+const { throwError } = require('rxjs');
 let roles;
 let departments;
 let managers;
@@ -13,14 +14,16 @@ var connection = mysql.createConnection({
     host: "localhost",
 
     // // Your port; if not 3306
-    // port: 3306,
+    port: 3306,
+
     // Your username
     user: "root",
 
     // Your password
     password: "cielle13",
-    database: "employee-tricki-tracki"
+    database: "employee-tracker"
 });
+
 figlet('Employee Tracker', (err, result) => {
     console.log(err || result);
   });
@@ -607,7 +610,7 @@ deleteEmployee = () => {
 
 
 // // connect to the mysql server and sql database
-// connection.connect();
+connection.connect(err => { if (err) console.log (err)});
 // initialQuestions();
 
 // // function to handle posting new items up for auction
